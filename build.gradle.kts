@@ -1,27 +1,13 @@
 val gpr: DependencyHandler.(String, String?) -> Any by extra
 fun DependencyHandler.projectOrGithubPackage(path: String, configuration: String? = null): Any = gpr(path, configuration)
 
-plugins {
-    id("java")
-}
-
-group = "net.stephcraft"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     compileOnly(projectOrGithubPackage(":zombiecraft-utility", "shadow"))
 
     // spigot
-    compileOnly("org.spigotmc:spigot:1.19.3-R0.1-SNAPSHOT:remapped-mojang")
+    compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
-}
-
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+    // test
+    testImplementation("junit:junit:4.13.2")
+    testImplementation(kotlin("test"))
 }
