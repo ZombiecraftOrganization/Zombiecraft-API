@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly(project(":zombiecraft-utility"))
+    // compileOnly(projectOrGithubPackage(":zombiecraft-utility", "shadow"))
 
     // spigot
     compileOnly("org.spigotmc:spigot:1.19.3-R0.1-SNAPSHOT:remapped-mojang")
