@@ -1,3 +1,6 @@
+val gpr: DependencyHandler.(String, String?) -> Any by extra
+fun DependencyHandler.projectOrGithubPackage(path: String, configuration: String? = null): Any = gpr(path, configuration)
+
 plugins {
     id("java")
 }
@@ -10,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    // compileOnly(projectOrGithubPackage(":zombiecraft-utility", "shadow"))
+    compileOnly(projectOrGithubPackage(":zombiecraft-utility", "shadow"))
 
     // spigot
     compileOnly("org.spigotmc:spigot:1.19.3-R0.1-SNAPSHOT:remapped-mojang")
