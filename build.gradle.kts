@@ -5,7 +5,7 @@ dependencies {
     compileOnly(projectOrGithubPackage(":zombiecraft-utility"))
 
     // spigot
-    compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
 
     // test
     testImplementation("junit:junit:4.13.2")
